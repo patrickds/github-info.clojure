@@ -5,8 +5,8 @@
 
 (def get-profile-as-string
   (make-get-formatted-profile
-    http/get
-    string-formatter/format-repositories))
+   http/get
+   string-formatter/format-repositories))
 
 (defn -main [& args]
   (println "Type :exit to exit")
