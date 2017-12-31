@@ -16,8 +16,8 @@ You will need:
 
 ```shell
 lein deps            # install all dependencies
-lein midje           # run all tests
-lein midje :autotest # run all tests in watch mode
+lein test            # run all tests
+lein test:watch      # run all tests in watch mode
 lein run:cli         # run the cli
 lein format          # formats all source files
 ```

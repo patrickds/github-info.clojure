@@ -11,4 +11,6 @@
                              [lein-cljfmt "0.5.7"]]}}
   :test-paths ["test/unit"]
   :aliases {"run:cli" ["run" "-m" "cli.main/-main"]
+            "test" ["midje"]
+            "test:watch" ["midje" ":autotest"]
             "format" ["cljfmt" "fix"]})
