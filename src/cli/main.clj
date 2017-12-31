@@ -1,16 +1,21 @@
 (ns cli.main
   (:require [clj-http.client :as http]
-            [core.profile-fetcher :refer :all]))
+            [core.string-formatter :as string-formatter]
+            [usecase.get-formatted-profile :refer :all]))
 
-(def get-profile (make-get-profile http/get))
+(def get-profile-as-string
+  (make-get-formatted-profile
+    http/get
+    string-formatter/format-repositories))
 
 (defn -main [& args]
   (println "Type :exit to exit")
   (loop []
-    (println "\nEnter a github username")
+    (println "Enter a github username")
     (let [username (read)]
+      (println)
       (when (not= username :exit)
         (-> username
-            get-profile
+            get-profile-as-string
             println)
         (recur)))))

@@ -2,7 +2,7 @@
   (:require [midje.sweet :refer :all]
             [core.string-formatter :as formatter]))
 
-(facts 
+(facts
   (fact "It formats a repository to a pretty string"
     (formatter/format-repositories '({:name "android.experimental" :stargazers_count 0})) =>
       "Name: android.experimental\tStars: 0\n")
