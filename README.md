@@ -20,4 +20,5 @@ lein test            # run all tests
 lein test:watch      # run all tests in watch mode
 lein run:cli         # run the cli
 lein format          # formats all source files
+lein lint            # lint all source files
 ```
