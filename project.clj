@@ -7,6 +7,8 @@
                  [clj-http "3.7.0"]
                  [cheshire "5.8.0"]]
   :profiles {:dev {:dependencies [[midje "1.6.3"]]
-                   :plugins [[lein-midje "3.2.1"]]}}
+                   :plugins [[lein-midje "3.2.1"]
+                             [lein-cljfmt "0.5.7"]]}}
   :test-paths ["test/unit"]
-  :aliases {"run:cli" ["run" "-m" "cli.main/-main"]})
+  :aliases {"run:cli" ["run" "-m" "cli.main/-main"]
+            "format" ["cljfmt" "fix"]})

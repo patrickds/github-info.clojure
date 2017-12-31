@@ -19,4 +19,5 @@ lein deps            # install all dependencies
 lein midje           # run all tests
 lein midje :autotest # run all tests in watch mode
 lein run:cli         # run the cli
+lein format          # formats all source files
 ```
