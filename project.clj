@@ -9,10 +9,12 @@
   :profiles {:dev {:dependencies [[midje "1.6.3"]]
                    :plugins [[lein-midje "3.2.1"]
                              [lein-cljfmt "0.5.7"]
-                             [jonase/eastwood "0.2.5"]]}}
+                             [jonase/eastwood "0.2.5"]
+                             [lein-cloverage "1.0.10"]]}}
   :test-paths ["test/unit"]
   :aliases {"run:cli" ["run" "-m" "cli.main/-main"]
             "test" ["midje"]
             "test:watch" ["midje" ":autotest"]
             "format" ["cljfmt" "fix"]
-            "lint" ["eastwood"]})
+            "lint" ["eastwood"]
+            "coverage" ["cloverage" "--runner" ":midje"]})
