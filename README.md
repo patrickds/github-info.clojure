@@ -15,10 +15,12 @@ You will need:
 ### Then
 
 ```shell
-lein deps            # install all dependencies
-lein test            # run all tests
-lein test:watch      # run all tests in watch mode
-lein run:cli         # run the cli
-lein format          # formats all source files
-lein lint            # lint all source files
+lein deps               # install all dependencies
+lein test               # runs all tests
+lein test:watch         # runs all tests in watch mode
+lein run:cli            # runs the cli app
+lein run:server         # runs the server app
+lein run:server:watch   # runs the server app and and reloads on file changes
+lein format             # formats all source files
+lein lint               # lint all source files
 ```
