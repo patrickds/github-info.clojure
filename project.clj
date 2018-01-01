@@ -1,6 +1,6 @@
 (defproject clojureapp "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "A very nice program where you input your github username and it shows you less information than github already shows you."
+  :url "https://github.com/patrickds/github-info.clojure"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
