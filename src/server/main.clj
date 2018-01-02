@@ -11,11 +11,11 @@
    json/generate-string))
 
 (defroutes handler
-    (GET "/" [] "Hi pretty ( ͡° ͜ʖ ͡°)")
-    (GET "/:username" [username] (get-profile-as-json username)))
+  (GET "/" [] "Hi pretty ( ͡° ͜ʖ ͡°)")
+  (GET "/:username" [username] (get-profile-as-json username)))
 
 (defn json-content-type-middleware [handler]
-  (fn [request] 
+  (fn [request]
     (let [response (handler request)]
       (assoc-in response [:headers "Content-Type"] "application/json"))))
 

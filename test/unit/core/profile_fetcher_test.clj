@@ -3,8 +3,12 @@
             [mocks.http-client :as mock-http]
             [core.profile-fetcher :refer :all]))
 
+(def fetch-profile (make-get-profile mock-http/get))
+
 (fact "It returns user repos for a given username"
-      (let [get-profile (make-get-profile mock-http/get)]
-        (get-profile "patrickds") =>
-        '({:name "android.experimental" :stargazers_count 0}
-          {:name "chat" :stargazers_count 1})))
+      (fetch-profile "patrickds") =>
+      '({:name "android.experimental" :stargazers_count 0}
+        {:name "chat" :stargazers_count 1}))
+
+(fact "It throws an exception for a user not found"
+      (fetch-profile "throws exception") => (throws Exception "Error"))
