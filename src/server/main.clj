@@ -6,7 +6,7 @@
             [usecase.get-formatted-profile :refer :all]))
 
 (def get-profile-as-json
-  (make-get-formatted-profile
+  (partial get-formatted-profile
    http/get
    json/generate-string))
 

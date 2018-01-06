@@ -4,7 +4,7 @@
             [usecase.get-formatted-profile :refer :all]))
 
 (def get-profile-as-string
-  (make-get-formatted-profile
+  (partial get-formatted-profile
    http/get
    string-formatter/format-repositories))
 

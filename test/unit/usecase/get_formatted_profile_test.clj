@@ -3,15 +3,15 @@
             [mocks.http-client :as mock-http]
             [cheshire.core :as json]
             [core.string-formatter :as string-formatter]
-            [usecase.get-formatted-profile :refer [make-get-formatted-profile]]))
+            [usecase.get-formatted-profile :refer [get-formatted-profile]]))
 
 (def get-profile-as-string
-  (make-get-formatted-profile
-   mock-http/get
-   string-formatter/format-repositories))
+  (partial get-formatted-profile
+    mock-http/get
+    string-formatter/format-repositories))
 
 (def get-profile-as-json
-  (make-get-formatted-profile
+  (partial get-formatted-profile
    mock-http/get
    json/generate-string))
 
