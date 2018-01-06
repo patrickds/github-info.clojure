@@ -3,7 +3,7 @@
             [mocks.http-client :as mock-http]
             [core.profile-fetcher :refer :all]))
 
-(def fetch-profile (make-get-profile mock-http/get))
+(def fetch-profile (partial get-profile mock-http/get))
 
 (fact "It returns user repos for a given username"
       (fetch-profile "patrickds") =>

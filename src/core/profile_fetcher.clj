@@ -6,11 +6,10 @@
 
 (defn- url-for [username] (str "https://api.github.com/users/" username))
 
-(defn make-get-profile [http-get]
+(defn get-profile [http-get username]
   (let [fetch-body-as-json (comp parse-json :body http-get)]
-    (fn [username]
-      (->> (url-for username)
-           fetch-body-as-json
-           :repos_url
-           fetch-body-as-json
-           (map #(select-keys % [:name :stargazers_count]))))))
+    (->> (url-for username)
+          fetch-body-as-json
+          :repos_url
+          fetch-body-as-json
+          (map #(select-keys % [:name :stargazers_count])))))
